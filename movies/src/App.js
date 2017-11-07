@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Movies from './components/Movies';
+import MoviesDetails from './components/Movies';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 

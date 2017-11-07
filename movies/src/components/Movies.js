@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 
 import MoviesDetails from './MoviesDetails';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getMovies } from '../actions';
 
@@ -29,12 +29,12 @@ class Movies extends Component {
           {this.props.movies.map((movie, i) => {
             return (
               <li key={i}>
-                <Link
+                <NavLink
                   activeClassName="nav-link--active"
                   to={`/movies/${movie.id}`}
                 >
                   {movie.title}
-                </Link>
+                </NavLink>
               </li>
             );
           })}
