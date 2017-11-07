@@ -13,7 +13,7 @@ export const getMovies = () => {
 };
 
 export const setSelectedMovie = id => {
-  const moviesRequest = axios.get('http://localhost:5000/movies/${id}');
+  const moviesRequest = axios.get(`http://localhost:5000/movies/${id}`);
 
   return {
     type: SET_SELECTED_MOVIE,

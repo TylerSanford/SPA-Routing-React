@@ -29,7 +29,7 @@ class Movies extends Component {
           {this.props.movies.map((movie, i) => {
             return (
               <li key={i}>
-                <Link to={'/:' + movie.id}>{movie.title}</Link>
+                <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
               </li>
             );
           })}

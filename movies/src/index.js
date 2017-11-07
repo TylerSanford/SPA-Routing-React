@@ -24,7 +24,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Route exact path="/" component={App} />
-        <Route path="/:id" component={MoviesDetails} />
+        <Route path="/movies/:id" component={MoviesDetails} />
       </div>
     </BrowserRouter>
   </Provider>,

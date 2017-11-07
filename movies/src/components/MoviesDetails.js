@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setSelectedMovie } from '../actions';
 
-class MovieDetail extends Component {
+class MoviesDetails extends Component {
   componentDidMount() {
     this.props.setSelectedMovie(this.props.match.params.id);
+    console.log(this.props.match.params.id);
   }
 
   render() {
@@ -24,4 +25,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { setSelectedMovie })(MovieDetail);
+export default connect(mapStateToProps, { setSelectedMovie })(MoviesDetails);
