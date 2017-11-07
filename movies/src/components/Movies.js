@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
 
+import { Route } from 'react-router-dom';
+
+import MoviesDetails from './MoviesDetails';
+
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getMovies } from '../actions';
+
 class Movies extends Component {
   constructor(props) {
     super(props);
@@ -11,10 +19,6 @@ class Movies extends Component {
 
   componentDidMount() {
     const movies = this.props.getMovies();
-
-    this.setState({
-      movies
-    });
   }
 
   render() {
@@ -24,10 +28,9 @@ class Movies extends Component {
         <ul>
           {this.props.movies.map((movie, i) => {
             return (
-              <h1>{movie.title}</h1>
-              Director: {movie.director}
-              Meta Score: {movie.metaScore}
-              Stars: {movie.stars}
+              <li key={i}>
+                <Link to={'/:' + movie.id}>{movie.title}</Link>
+              </li>
             );
           })}
         </ul>
@@ -36,4 +39,10 @@ class Movies extends Component {
   }
 }
 
-export default Movies;
+const mapStateToProps = state => {
+  return {
+    movies: state.movies
+  };
+};
+
+export default connect(mapStateToProps, { getMovies })(Movies);
