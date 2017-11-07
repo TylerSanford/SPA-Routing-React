@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import MoviesContainer from './components/MoviesContainer';
+import Movies from './components/Movies';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MoviesContainer />
+        <Movies />
       </div>
     );
   }

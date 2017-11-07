@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setSelectedMovie } from '../actions';
+import Movies from './Movies';
 
 class MoviesDetails extends Component {
   componentDidMount() {
@@ -12,8 +13,11 @@ class MoviesDetails extends Component {
     if (this.props.selectedMovie === null) return null;
     return (
       <div>
+        <Movies />
         <h1>{this.props.selectedMovie.title}</h1>
+        <h3>Director: {this.props.selectedMovie.director}</h3>
         <h3>MetaScore: {this.props.selectedMovie.metascore}</h3>
+        <h3>Stars: {this.props.selectedMovie.stars}</h3>
       </div>
     );
   }
